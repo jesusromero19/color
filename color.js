@@ -36,9 +36,24 @@ Color.greenIntensity = function(rgb){
 };
 
 //blueIntensity
+Color.blueIntensity = function(rgb){
+  let blueIntensity = rgb[2]/255*100;
+  blueIntensity = Math.Round(blueIntensity);
+  return blueIntensity;
+};
 
+  //brightness
+  Color.brightness = function(){
+    var bright;
+    bright = (Color.blueIntensity(rgb)+Color.redIntensity(rgb)+Color.greenIntensity(rgb))/3;
+    return bright;
+  };
 
-//brightness
-
-
-//complement
+  //complement
+  Color.complement = function(){
+    var complement = rgb;
+    rgb[0] = 255 - rgb[0];
+    rgb[1] = 255 - rgb[1];
+    rgb[2] = 255 - rgb[2];
+    return complement;
+  };
